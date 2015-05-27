@@ -52,8 +52,6 @@ public class HttpTransport implements Transport {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         try {
             HttpPost httppost = new HttpPost(serverURL.toString());
-            System.out.println("Executing request " + httppost.getRequestLine());
-            System.out.println(request);
             httppost.setEntity(new StringEntity(request));
             // Create a custom response handler
             ResponseHandler<String> responseHandler = new ResponseHandler<String>() {

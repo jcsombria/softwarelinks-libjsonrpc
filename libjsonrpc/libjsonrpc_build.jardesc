@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="libjsonrpc/build/controller.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/libjsonrpc/libjsonrpc_build.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/libjsonrpc/.classpath"/>
+        <javaElement handleIdentifier="=libjsonrpc/src"/>
+        <file path="/libjsonrpc/lib/javax.json-api-1.0.jar"/>
+        <file path="/libjsonrpc/lib/httpcore-4.3.1.jar"/>
+        <file path="/libjsonrpc/lib/httpclient-4.3.2.jar"/>
+        <file path="/libjsonrpc/.project"/>
+        <file path="/libjsonrpc/.gitignore"/>
+    </selectedElements>
+</jardesc>

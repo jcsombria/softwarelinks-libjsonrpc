@@ -1,5 +1,5 @@
 /**
- * RpcClient
+ * RpcParam
  * author: Jesús Chacón <jcsombria@gmail.com>
  *
  * Copyright (C) 2013 Jesús Chacón
@@ -17,10 +17,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package es.uned.dia.jcsombria.softwarelinks.rpc;
+package es.uned.dia.jcsombria.softwarelinks.rpc.param;
 
-public interface RpcClient {
-	public Object[] execute(String method, Object[] params);
-	public void executeLater(String method, Object[] params);
-	public Object[] sendBatch();	
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObjectBuilder;
+
+public interface RpcParam<T> {
+	public void addTo(JsonObjectBuilder object);
+	public void addTo(JsonArrayBuilder object);
+	public String getName();
+	public void setName(String name);
+	public T get();
+	public void set(T value);
 }

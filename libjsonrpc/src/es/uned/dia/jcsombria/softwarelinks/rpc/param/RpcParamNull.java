@@ -1,5 +1,5 @@
 /**
- * RpcClient
+ * RpcParamNull
  * author: Jesús Chacón <jcsombria@gmail.com>
  *
  * Copyright (C) 2013 Jesús Chacón
@@ -17,10 +17,44 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package es.uned.dia.jcsombria.softwarelinks.rpc;
+package es.uned.dia.jcsombria.softwarelinks.rpc.param;
 
-public interface RpcClient {
-	public Object[] execute(String method, Object[] params);
-	public void executeLater(String method, Object[] params);
-	public Object[] sendBatch();	
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObjectBuilder;
+
+public class RpcParamNull implements RpcParam<Object> {
+	private String name;
+	
+	public RpcParamNull(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public void addTo(JsonObjectBuilder object) {
+		object.addNull(name);
+	}
+	
+	@Override
+	public void addTo(JsonArrayBuilder array) {
+		array.addNull();
+	}
+	
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;		
+	}
+
+	@Override
+	public Object get() {
+		return null;
+	}
+
+	@Override
+	public void set(Object value) {}
+
 }

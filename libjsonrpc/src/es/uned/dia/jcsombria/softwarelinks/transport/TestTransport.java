@@ -1,5 +1,5 @@
 /**
- * RpcClient
+ * TestTransport
  * author: Jesús Chacón <jcsombria@gmail.com>
  *
  * Copyright (C) 2013 Jesús Chacón
@@ -17,10 +17,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package es.uned.dia.jcsombria.softwarelinks.rpc;
+package es.uned.dia.jcsombria.softwarelinks.transport;
 
-public interface RpcClient {
-	public Object[] execute(String method, Object[] params);
-	public void executeLater(String method, Object[] params);
-	public Object[] sendBatch();	
+import es.uned.dia.jcsombria.softwarelinks.rpc.JsonRpcBuilder;
+
+public class TestTransport implements Transport {
+	public Object send(String request) throws Exception {		
+		Object response = JsonRpcBuilder.response(request.toString(), "1234");
+        return response.toString();
+	}
 }
